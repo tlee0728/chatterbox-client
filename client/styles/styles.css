@@ -1,7 +1,7 @@
 body {
-    background: #eee;
+    background: linear-gradient(to right, rgb(240, 124, 144), white);
     text-align: center;
-    padding: 0 25px;
+    padding: 0 0px;
     font-family: arial, sans-serif;
 }
 
@@ -66,7 +66,11 @@ form input[type=text] {
 }
 
 .chat .username {
-    font-weight: 800;
+    font-weight: 500;
+
+}
+.chat {
+    background-color: pink;
 }
 
 .chat:hover {

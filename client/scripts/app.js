@@ -15,12 +15,19 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
+    
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
+      console.log(data)
       // examine the response from the server request:
-      console.log(data);
+      for (var i = 0; i < data.results.length; i++ ) {
+        var messageObj = data.results[i];
+        if (messageObj.username && messageObj.text) {
+          MessagesView.renderMessage(MessageView.render(data.results[i]));
+        } 
+      }
 
       callback();
     });
